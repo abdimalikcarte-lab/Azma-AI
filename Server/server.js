@@ -4,10 +4,11 @@ import cors from "cors";
 import helmet from "helmet";
 import dotenv from "dotenv";
 
+import authRoutes from "./routes/authRoutes.js";
+
 dotenv.config();
 
 const app = express();
-
 const PORT = process.env.PORT || 5000;
 
 // Security middleware
@@ -21,10 +22,10 @@ app.use(
   })
 );
 
-// JSON middleware
-app.use(express.json());
+// Parse JSON requests
+app.use(express.json({ limit: "1mb" }));
 
-// Health check
+// API health check
 app.get("/api/health", (req, res) => {
   res.status(200).json({
     success: true,
@@ -33,6 +34,9 @@ app.get("/api/health", (req, res) => {
     status: "healthy"
   });
 });
+
+// Authentication routes
+app.use("/api/auth", authRoutes);
 
 // Welcome route
 app.get("/", (req, res) => {
