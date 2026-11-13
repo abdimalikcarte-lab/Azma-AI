@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 
 import authRoutes from "./routes/authRoutes.js";
 import chatRoutes from "./routes/chatRoutes.js";
+import conversationRoutes from "./routes/conversationRoutes.js";
 
 dotenv.config();
 
@@ -36,11 +37,14 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// Authentication API
+// Authentication routes
 app.use("/api/auth", authRoutes);
 
-// AI Chat API
+// AI Chat routes
 app.use("/api/chat", chatRoutes);
+
+// Conversation routes
+app.use("/api/conversations", conversationRoutes);
 
 // Welcome route
 app.get("/", (req, res) => {
