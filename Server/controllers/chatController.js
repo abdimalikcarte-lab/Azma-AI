@@ -1,10 +1,23 @@
+
 import OpenAI from "openai";
 import { query } from "../config/db.js";
 
-// Initialize OpenAI
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
+// Initialize OpenAI only when needed
+let openaiClient = null;
+
+function getOpenAIClient() {
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error("OPENAI_API_KEY is not configured.");
+  }
+
+  if (!openaiClient) {
+    openaiClient = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY
+    });
+  }
+
+  return openaiClient;
+}
 
 // AZMA AI instructions
 const SYSTEM_PROMPT = `
@@ -30,7 +43,11 @@ export async function sendChatMessage(req, res, next) {
     const { message, conversationId } = req.body;
 
     // Validate message
-    if (!message || typeof message !== "string" || !message.trim()) {
+    if (
+      !message ||
+      typeof message !== "string" ||
+      !message.trim()
+    ) {
       return res.status(400).json({
         success: false,
         message: "A valid message is required."
@@ -44,13 +61,15 @@ export async function sendChatMessage(req, res, next) {
       });
     }
 
-    // Check API key
+    // Check API key before creating or saving messages
     if (!process.env.OPENAI_API_KEY) {
       return res.status(503).json({
         success: false,
         message: "AI service is not configured yet."
       });
     }
+
+    const openai = getOpenAIClient();
 
     let activeConversation;
 
