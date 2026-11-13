@@ -5,6 +5,7 @@ import helmet from "helmet";
 import dotenv from "dotenv";
 
 import authRoutes from "./routes/authRoutes.js";
+import chatRoutes from "./routes/chatRoutes.js";
 
 dotenv.config();
 
@@ -35,8 +36,11 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// Authentication routes
+// Authentication API
 app.use("/api/auth", authRoutes);
+
+// AI Chat API
+app.use("/api/chat", chatRoutes);
 
 // Welcome route
 app.get("/", (req, res) => {
