@@ -1,0 +1,15 @@
+
+{
+  "name": "azma-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AZMA AI - Intelligent Conversational Platform",
+  "type": "module",
+  "scripts": {
+    "install:all": "npm install --prefix Server && npm install --prefix Client",
+    "dev:server": "npm run dev --prefix Server",
+    "dev:client": "npm run dev --prefix Client",
+    "build": "npm run build --prefix Client",
+    "start": "npm start --prefix Server"
+  }
+}
