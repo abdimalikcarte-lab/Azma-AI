@@ -13,22 +13,22 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 
-  /* BRAND COLORS */
   --bg-primary: #09090B;
-  --bg-secondary: #18112B;
-  --bg-card: #151026;
-  --bg-hover: #21183A;
+  --bg-secondary: #111B27;
+  --bg-card: #152536;
+  --bg-hover: #1B3445;
 
-  --border-color: #302447;
+  --border-color: #294456;
 
   --text-primary: #EDE9FE;
-  --text-secondary: #C4B5FD;
-  --text-muted: #9B8BB8;
+  --text-secondary: #B8DCEB;
+  --text-muted: #8ECAE6;
 
-  --accent: #7C3AED;
-  --accent-hover: #6D28D9;
-  --accent-light: #A78BFA;
-  --accent-blue: #2563EB;
+  --accent: #219EBC;
+  --accent-hover: #187F9A;
+  --accent-light: #8ECAE6;
+  --accent-purple: #7C3AED;
+  --accent-blue: #219EBC;
 
   --success: #22C55E;
   --danger: #EF4444;
@@ -39,7 +39,6 @@
 
   --transition: 0.2s ease;
 }
-
 /* =====================================
    RESET
 ===================================== */
@@ -132,14 +131,15 @@ ul {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent), var(--accent-blue));
-  color: #fff;
+  background: linear-gradient(135deg, #219EBC, #8ECAE6);
+  color: #09090B;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--accent-hover), #1D4ED8);
+  background: linear-gradient(135deg, #187F9A, #219EBC);
+  color: #FFFFFF;
   transform: translateY(-1px);
-}
+   }
 
 .btn-secondary {
   background: var(--bg-card);
