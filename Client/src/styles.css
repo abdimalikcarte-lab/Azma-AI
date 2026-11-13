@@ -1,7 +1,5 @@
-
 /* =====================================
-   AZMA AI - BLACK / PURPLE / NEON BLUE
-   GLOBAL DESIGN SYSTEM
+   AZMA AI - OCEAN BLUE DESIGN SYSTEM
 ===================================== */
 
 :root {
@@ -27,8 +25,8 @@
   --accent: #219EBC;
   --accent-hover: #187F9A;
   --accent-light: #8ECAE6;
-  --accent-purple: #7C3AED;
-  --accent-blue: #219EBC;
+  --accent-purple: #219EBC;
+  --accent-blue: #8ECAE6;
 
   --success: #22C55E;
   --danger: #EF4444;
@@ -39,6 +37,7 @@
 
   --transition: 0.2s ease;
 }
+
 /* =====================================
    RESET
 ===================================== */
@@ -104,7 +103,7 @@ ul {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #49356B;
+  background: #294456;
   border-radius: 20px;
 }
 
@@ -139,7 +138,7 @@ ul {
   background: linear-gradient(135deg, #187F9A, #219EBC);
   color: #FFFFFF;
   transform: translateY(-1px);
-   }
+}
 
 .btn-secondary {
   background: var(--bg-card);
@@ -183,7 +182,7 @@ ul {
 
 .form-control:focus {
   border-color: var(--accent-light);
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18);
+  box-shadow: 0 0 0 3px rgba(33, 158, 188, 0.18);
 }
 
 .form-control::placeholder {
@@ -201,16 +200,16 @@ ul {
   align-items: center;
   padding: 30px 16px;
   background:
-  radial-gradient(circle at top left, rgba(142, 202, 230, 0.15), transparent 35%),
-  radial-gradient(circle at bottom right, rgba(33, 158, 188, 0.15), transparent 35%),
-  #09090B;
+    radial-gradient(circle at top left, rgba(142, 202, 230, 0.15), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(33, 158, 188, 0.15), transparent 35%),
+    #09090B;
 }
 
 .auth-card {
   width: 100%;
   max-width: 440px;
   padding: 36px;
-  background: rgba(24, 17, 43, 0.96);
+  background: rgba(17, 27, 39, 0.96);
   border: 1px solid var(--border-color);
   border-radius: 22px;
   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
@@ -224,18 +223,20 @@ ul {
   margin-bottom: 32px;
 }
 
+/* UPDATED BRAND ICON */
+
 .brand-icon {
   width: 58px;
   height: 58px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(124, 58, 237, 0.18);
-  color: var(--accent-light);
-  border: 1px solid rgba(167, 139, 250, 0.30);
+  background: linear-gradient(135deg, #219EBC, #8ECAE6);
+  color: #09090B;
+  border: 1px solid rgba(142, 202, 230, 0.45);
   border-radius: 17px;
   margin-bottom: 13px;
-  box-shadow: 0 0 25px rgba(124, 58, 237, 0.16);
+  box-shadow: 0 0 25px rgba(33, 158, 188, 0.25);
 }
 
 .auth-brand h1 {
@@ -353,7 +354,7 @@ ul {
   display: flex;
   flex-direction: column;
   padding: 20px 14px;
-  background: #100B1D;
+  background: #111B27;
   border-right: 1px solid var(--border-color);
   transition: transform var(--transition);
   z-index: 20;
@@ -394,7 +395,7 @@ ul {
   justify-content: center;
   gap: 9px;
   margin: 20px 0;
-  color: white;
+  color: #09090B;
   background: linear-gradient(135deg, var(--accent), var(--accent-blue));
   border: none;
   border-radius: 10px;
@@ -404,7 +405,7 @@ ul {
 }
 
 .new-chat-btn:hover {
-  background: linear-gradient(135deg, var(--accent-hover), #1D4ED8);
+  background: linear-gradient(135deg, var(--accent-hover), var(--accent));
   transform: translateY(-1px);
 }
 
@@ -645,12 +646,12 @@ ul {
   color: var(--accent-light);
   background: linear-gradient(
     135deg,
-    rgba(124, 58, 237, 0.20),
-    rgba(37, 99, 235, 0.15)
+    rgba(33, 158, 188, 0.22),
+    rgba(142, 202, 230, 0.15)
   );
-  border: 1px solid rgba(167, 139, 250, 0.25);
+  border: 1px solid rgba(142, 202, 230, 0.30);
   border-radius: 24px;
-  box-shadow: 0 0 35px rgba(124, 58, 237, 0.12);
+  box-shadow: 0 0 35px rgba(33, 158, 188, 0.15);
 }
 
 .welcome-screen h1 {
@@ -717,8 +718,10 @@ ul {
   align-items: flex-start;
   gap: 14px;
   padding: 20px 12px;
-  border-bottom: 1px solid rgba(48, 36, 71, 0.55);
+  border-bottom: 1px solid rgba(41, 68, 86, 0.55);
 }
+
+/* UPDATED AZMA AI MESSAGE AVATAR */
 
 .message-avatar {
   width: 34px;
@@ -727,14 +730,19 @@ ul {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: var(--accent-light);
-  background: rgba(124, 58, 237, 0.18);
+  color: #09090B;
+  background: linear-gradient(135deg, #219EBC, #8ECAE6);
+  border: 1px solid rgba(142, 202, 230, 0.35);
   border-radius: 10px;
+  box-shadow: 0 0 12px rgba(33, 158, 188, 0.15);
 }
 
+/* USER MESSAGE AVATAR */
+
 .message-row.user .message-avatar {
-  color: #BFDBFE;
-  background: rgba(37, 99, 235, 0.18);
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #187F9A, #219EBC);
+  border-color: rgba(33, 158, 188, 0.35);
 }
 
 .message-content {
@@ -749,7 +757,7 @@ ul {
 }
 
 .message-content p {
-  color: #D8D1E8;
+  color: #D8EAF0;
   font-size: 14px;
   line-height: 1.8;
   white-space: pre-wrap;
@@ -786,7 +794,7 @@ ul {
 
 .chat-input-form:focus-within {
   border-color: var(--accent-light);
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.10);
+  box-shadow: 0 0 0 3px rgba(33, 158, 188, 0.12);
 }
 
 .chat-input-form textarea {
@@ -814,7 +822,7 @@ ul {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: white;
+  color: #09090B;
   background: linear-gradient(135deg, var(--accent), var(--accent-blue));
   border: none;
   border-radius: 11px;
@@ -822,12 +830,14 @@ ul {
 }
 
 .chat-input-form button:hover {
-  background: linear-gradient(135deg, var(--accent-hover), #1D4ED8);
+  color: #FFFFFF;
+  background: linear-gradient(135deg, var(--accent-hover), var(--accent));
   transform: translateY(-1px);
 }
 
 .chat-input-form button:disabled {
-  background: #49356B;
+  color: #FFFFFF;
+  background: #294456;
 }
 
 .chat-input-area > p {
